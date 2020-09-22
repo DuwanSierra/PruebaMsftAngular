@@ -126,6 +126,7 @@ export class ViewItemsComponent implements OnInit, AfterViewInit {
       message: '¿Esta seguro de eliminar item?',
       accept: () => {
         this.datasource.splice(this.datasource.indexOf(item), 1);
+        this.totalRecords = this.datasource.length;
         this.dataTable.clear();
       }
     });
