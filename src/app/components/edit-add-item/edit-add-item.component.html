@@ -1,0 +1,26 @@
+<form [formGroup]="formItem" (ngSubmit)="saveItem(formItem.value)">
+  <div class="flex-content">
+    <h5>About</h5>
+    <textarea pInputTextarea type="text" aria-describedby="about-help" class="{{formItem.get('about').invalid ? 'p-invalid' : ''}}" formControlName="about"></textarea>
+    <small id="about-help" *ngIf="formItem.get('about').invalid" class="p-invalid">About no es valido</small>
+  </div>
+  <div class="flex-content">
+    <h5>Access URL</h5>
+    <textarea pInputTextarea aria-describedby="accessURL-help" type="text" class="{{formItem.get('accessURL').invalid ? 'p-invalid' : ''}}" formControlName="accessURL"></textarea>
+    <small id="accessURL-help" *ngIf="formItem.get('about').invalid" class="p-invalid">Access URL no es valido</small>
+
+  </div>
+  <div class="flex-content">
+    <h5>Title</h5>
+    <textarea pInputTextarea aria-describedby="title-help" type="text" class="{{formItem.get('title').invalid ? 'p-invalid' : ''}}"  formControlName="title"></textarea>
+    <small id="title-help" *ngIf="formItem.get('about').invalid" class="p-invalid">Title no es valido</small>
+  </div>
+  <div class="p-dialog-footer">
+    <button pButton class="p-button-raised p-button-secondary" type="button" (click)="ref.close(undefined)" label="Cancelar"></button>
+    <button pButton class="p-button-info" type="submit" label="Guardar"></button>
+  </div>
+</form>
+
+
+
+
